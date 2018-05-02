@@ -11,7 +11,11 @@ export default {
     babel({
       babelrc: false,
       presets: [['es2015', { modules: false, loose: true }]],
-      plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-runtime'],
+      plugins: ['transform-decorators-legacy', 'transform-class-properties', ['transform-runtime',{
+        "helpers": true,
+        "polyfill": false,
+        "regenerator": false
+      }]],
       runtimeHelpers: true
     }),
     replace({

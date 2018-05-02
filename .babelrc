@@ -1,6 +1,10 @@
 {
   "presets": ["es2015"],
-  "plugins": ["transform-decorators-legacy", "transform-class-properties", "transform-runtime"],
+  "plugins": ["transform-decorators-legacy", "transform-class-properties", ["transform-runtime",{
+    "helpers": true,
+    "polyfill": false,
+    "regenerator": false
+  }]],
   "env": {
     "cover": {
       "plugins": ["istanbul"]
