@@ -91,7 +91,8 @@ export function choose(script) {
     script = [script];
   }
 
-  for (let s of script) {
+  for (let i = 0; i < script.length; i++) {
+    let s = script[i]
     let shaper = SHAPERS[s];
     if (shaper) {
       return shaper;

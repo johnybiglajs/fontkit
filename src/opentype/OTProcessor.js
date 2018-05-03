@@ -189,7 +189,8 @@ export default class OTProcessor {
     this.positions = positions;
     this.glyphIterator = new GlyphIterator(glyphs);
 
-    for (let {feature, lookup} of lookups) {
+    for (let i = 0; i < lookups.length; i++) {
+      let {feature, lookup} = lookups[i];
       this.currentFeature = feature;
       this.glyphIterator.reset(lookup.flags);
 
@@ -199,7 +200,8 @@ export default class OTProcessor {
           continue;
         }
 
-        for (let table of lookup.subTables) {
+        for (let j = 0; j < lookup.subTables.length; j++) {
+          let table = lookup.subTables[j];
           let res = this.applyLookup(lookup.lookupType, table);
           if (res) {
             break;
@@ -219,7 +221,8 @@ export default class OTProcessor {
     let options = this.glyphIterator.options;
     let glyphIndex = this.glyphIterator.index;
 
-    for (let lookupRecord of lookupRecords) {
+    for (let i = 0; i < lookupRecords.length; i++) {
+      let lookupRecord = lookupRecords[i];
       // Reset flags and find glyph index for this lookup record
       this.glyphIterator.reset(options, glyphIndex);
       this.glyphIterator.increment(lookupRecord.sequenceIndex);
@@ -229,7 +232,8 @@ export default class OTProcessor {
       this.glyphIterator.reset(lookup.flags, this.glyphIterator.index);
 
       // Apply lookup subtables until one matches
-      for (let table of lookup.subTables) {
+      for (let j = 0; j < lookup.subTables.length; j++) {
+        let table = lookup.subTables[j];
         if (this.applyLookup(lookup.lookupType, table)) {
           break;
         }

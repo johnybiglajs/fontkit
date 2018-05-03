@@ -78,7 +78,9 @@ export default class AATStateMachine {
       let entry = entryTable.getItem(entryIndex);
 
       // Try all glyphs in the class
-      for (let glyph of this.lookupTable.glyphsForValue(classCode)) {
+      let glyphs = this.lookupTable.glyphsForValue(classCode);
+      for (let i = 0; i < glyphs.length; i++) {
+        let glyph = glyphs[i];
         if (opts.enter) {
           opts.enter(glyph, entry);
         }

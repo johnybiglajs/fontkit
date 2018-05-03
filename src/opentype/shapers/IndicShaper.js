@@ -142,7 +142,8 @@ function isHalantOrCoeng(glyph) {
 }
 
 function wouldSubstitute(glyphs, feature) {
-  for (let glyph of glyphs) {
+  for (let i = 0; i < glyphs.length; i++) {
+    let glyph = glyphs[i];
     glyph.features = {[feature]: true};
   }
 

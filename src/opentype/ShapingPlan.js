@@ -93,7 +93,8 @@ export default class ShapingPlan {
    * Assigns the global features to the given glyphs
    */
   assignGlobalFeatures(glyphs) {
-    for (let glyph of glyphs) {
+    for (let i = 0; i < glyphs.length; i++) {
+      let glyph = glyphs[i];
       for (let feature in this.globalFeatures) {
         glyph.features[feature] = true;
       }
@@ -104,7 +105,8 @@ export default class ShapingPlan {
    * Executes the planned stages using the given OTProcessor
    */
   process(processor, glyphs, positions) {
-    for (let stage of this.stages) {
+    for (let i = 0; i < this.stages.length; i++) {
+      let stage = this.stages[i];
       if (typeof stage === 'function') {
         if (!positions) {
           stage(this.font, glyphs, this);
