@@ -79,7 +79,7 @@ export default class ArabicShaper extends DefaultShaper {
     // Apply the state machine to map glyphs to features
     for (let i = 0; i < glyphs.length; i++) {
       let curAction, prevAction;
-      var glyph = glyphs[i];
+      let glyph = glyphs[i];
       let type = getShapingClass(glyph.codePoints[0]);
       if (type === ShapingClasses.Transparent) {
         actions[i] = NONE;
@@ -99,7 +99,7 @@ export default class ArabicShaper extends DefaultShaper {
     // Apply the chosen features to their respective glyphs
     for (let index = 0; index < glyphs.length; index++) {
       let feature;
-      var glyph = glyphs[index];
+      let glyph = glyphs[index];
       if (feature = actions[index]) {
         glyph.features[feature] = true;
       }
