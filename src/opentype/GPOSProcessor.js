@@ -275,7 +275,6 @@ export default class GPOSProcessor extends OTProcessor {
     let baseCoords = this.getAnchor(baseAnchor);
     let markCoords = this.getAnchor(markRecord.markAnchor);
 
-    let basePos = this.positions[baseGlyphIndex];
     let markPos = this.positions[this.glyphIterator.index];
 
     markPos.xOffset = baseCoords.x - markCoords.x;
