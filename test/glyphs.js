@@ -1,6 +1,9 @@
 import fontkit from '../src';
+import WOFF2Font from '../src/WOFF2Font';
 import assert from 'assert';
 import BBox from '../src/glyph/BBox';
+
+fontkit.registerFormat(WOFF2Font);
 
 describe('glyphs', function() {
   describe('truetype glyphs', function() {
