@@ -1,8 +1,11 @@
 import DefaultShaper from './DefaultShaper';
 import ArabicShaper from './ArabicShaper';
 import HangulShaper from './HangulShaper';
-import IndicShaper from './IndicShaper';
 import UniversalShaper from './UniversalShaper';
+
+// IndicShaper support is disabled by default
+// Keep variable to allow easier restoration of the feature 
+let IndicShaper = UniversalShaper;
 
 const SHAPERS = {
   arab: ArabicShaper,    // Arabic
