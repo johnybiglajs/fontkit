@@ -48,7 +48,8 @@ export default class GlyphRun {
 
     // Convert features to an object
     if (Array.isArray(features)) {
-      for (let tag of features) {
+      for (let i = 0; i < features.length; i++) {
+        let tag = features[i];
         this.features[tag] = true;
       }
     } else if (typeof features === 'object') {
@@ -62,7 +63,8 @@ export default class GlyphRun {
    */
   get advanceWidth() {
     let width = 0;
-    for (let position of this.positions) {
+    for (let i = 0; i < this.positions.length; i++) {
+      let position = this.positions[i];
       width += position.xAdvance;
     }
 
@@ -75,7 +77,8 @@ export default class GlyphRun {
   */
   get advanceHeight() {
     let height = 0;
-    for (let position of this.positions) {
+    for (let i = 0; i < this.positions.length; i++) {
+      let position = this.positions[i];
       height += position.yAdvance;
     }
 

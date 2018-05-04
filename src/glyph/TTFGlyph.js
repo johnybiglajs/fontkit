@@ -270,7 +270,8 @@ export default class TTFGlyph extends Glyph {
 
     if (glyph.numberOfContours < 0) {
       // resolve composite glyphs
-      for (let component of glyph.components) {
+      for (let k = 0; k < glyph.components.length; k++) {
+        let component = glyph.components[k];
         let contours = this._font.getGlyph(component.glyphID)._getContours();
         for (let i = 0; i < contours.length; i++) {
           let contour = contours[i];

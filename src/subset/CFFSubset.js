@@ -17,7 +17,8 @@ export default class CFFSubset extends Subset {
     this.charstrings = [];
     let gsubrs = {};
 
-    for (let gid of this.glyphs) {
+    for (let i = 0; i < this.glyphs.length; i++) {
+      let gid = this.glyphs[i];
       this.charstrings.push(this.cff.getCharString(gid));
 
       let glyph = this.font.getGlyph(gid);
@@ -55,7 +56,8 @@ export default class CFFSubset extends Subset {
 
     let used_fds = {};
     let used_subrs = [];
-    for (let gid of this.glyphs) {
+    for (let i = 0; i < this.glyphs.length; i++) {
+      let gid = this.glyphs[i];
       let fd = this.cff.fdForGlyph(gid);
       if (fd == null) {
         continue;
@@ -90,7 +92,8 @@ export default class CFFSubset extends Subset {
 
   createCIDFontdict(topDict) {
     let used_subrs = {};
-    for (let gid of this.glyphs) {
+    for (let i = 0; i < this.glyphs.length; i++) {
+      let gid = this.glyphs[i];
       let glyph = this.font.getGlyph(gid);
       let path = glyph.path; // this causes the glyph to be parsed
 

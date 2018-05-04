@@ -54,9 +54,10 @@ export default class Path {
   get cbox() {
     if (!this._cbox) {
       let cbox = new BBox;
-      for (let command of this.commands) {
-        for (let i = 0; i < command.args.length; i += 2) {
-          cbox.addPoint(command.args[i], command.args[i + 1]);
+      for (let i = 0; i < this.commands.length; i++) {
+        let command = this.commands[i];
+        for (let j = 0; j < command.args.length; j += 2) {
+          cbox.addPoint(command.args[j], command.args[j + 1]);
         }
       }
 
@@ -86,7 +87,8 @@ export default class Path {
         + Math.pow(t, 3) * p3[i]
     );
 
-    for (let c of this.commands) {
+    for (let i = 0; i < this.commands.length; i++) {
+      let c = this.commands[i];
       switch (c.command) {
         case 'moveTo':
         case 'lineTo':
@@ -117,7 +119,7 @@ export default class Path {
           var p2 = [cp2x, cp2y];
           var p3 = [p3x, p3y];
 
-          for (var i = 0; i <= 1; i++) {
+          for (let i = 0; i <= 1; i++) {
             let b = 6 * p0[i] - 12 * p1[i] + 6 * p2[i];
             let a = -3 * p0[i] + 9 * p1[i] - 9 * p2[i] + 3 * p3[i];
             c = 3 * p1[i] - 3 * p0[i];
@@ -180,7 +182,8 @@ export default class Path {
   mapPoints(fn) {
     let path = new Path;
 
-    for (let c of this.commands) {
+    for (let i = 0; i < this.commands.length; i++) {
+      let c = this.commands[i];
       let args = [];
       for (let i = 0; i < c.args.length; i += 2) {
         let [x, y] = fn(c.args[i], c.args[i + 1]);

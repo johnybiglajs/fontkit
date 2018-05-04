@@ -137,7 +137,8 @@ const OPENTYPE_SCRIPTS = {};
 for (let script in UNICODE_SCRIPTS) {
   let tag = UNICODE_SCRIPTS[script];
   if (Array.isArray(tag)) {
-    for (let t of tag) {
+    for (let i = 0; i < tag.length; i++) {
+      let t = tag[i];
       OPENTYPE_SCRIPTS[t] = script;
     }
   } else {

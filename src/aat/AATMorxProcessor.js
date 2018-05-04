@@ -46,11 +46,13 @@ export default class AATMorxProcessor {
   // Processes an array of glyphs and applies the specified features
   // Features should be in the form of {featureType:{featureSetting:true}}
   process(glyphs, features = {}) {
-    for (let chain of this.morx.chains) {
+    for (let i = 0; i < this.morx.chains.length; i++) {
+      let chain = this.morx.chains[i];
       let flags = chain.defaultFlags;
 
       // enable/disable the requested features
-      for (let feature of chain.features) {
+      for (let j = 0; j < chain.features.length; j++) {
+        let feature = chain.features[j];
         let f;
         if ((f = features[feature.featureType]) && f[feature.featureSetting]) {
           flags &= feature.disableFlags;
@@ -58,7 +60,8 @@ export default class AATMorxProcessor {
         }
       }
 
-      for (let subtable of chain.subtables) {
+      for (let k = 0; k < chain.subtables.length; k++) {
+        let subtable = chain.subtables[k];
         if (subtable.subFeatureFlags & flags) {
           this.processSubtable(subtable, glyphs);
         }
@@ -253,8 +256,10 @@ export default class AATMorxProcessor {
 
   getSupportedFeatures() {
     let features = [];
-    for (let chain of this.morx.chains) {
-      for (let feature of chain.features) {
+    for (let i = 0; i < this.morx.chains.length; i++) {
+      let chain = this.morx.chains[i];
+      for (let j = 0; j < chain.features.length; j++) {
+        let feature = chain.features[j];
         features.push([feature.featureType, feature.featureSetting]);
       }
     }
@@ -273,10 +278,12 @@ export default class AATMorxProcessor {
   generateInputCache() {
     this.inputCache = {};
 
-    for (let chain of this.morx.chains) {
+    for (let i = 0; i < this.morx.chains.length; i++) {
+      let chain = this.morx.chains[i];
       let flags = chain.defaultFlags;
 
-      for (let subtable of chain.subtables) {
+      for (let j = 0; j < chain.subtables.length; j++) {
+        let subtable = chain.subtables[j];
         if (subtable.subFeatureFlags & flags) {
           this.generateInputsForSubtable(subtable);
         }
