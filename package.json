@@ -1,6 +1,6 @@
 {
-  "name": "fontkit-next",
-  "version": "1.8.1",
+  "name": "fontkit-lite",
+  "version": "1.8.0",
   "description": "An advanced font engine for Node and the browser",
   "keywords": [
     "opentype",
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/foliojs/fontkit.git"
+    "url": "git://github.com/blikblum/fontkit.git"
   },
   "dependencies": {
     "brotli": "^1.2.0",
