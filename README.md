@@ -4,19 +4,15 @@ FontKitLite is a fork of FontKit that aims for a smaller size
 
 Main differences to original code:
 
-* Do not use babel polyfills
 * Do not register Woff2 font by default
 * Do not support Indic shapes
-* Use dfa-lite (generator free) instead of dfa package
-* Replace for-of by vanilla for loop (incomplete)
 
 Drawbacks
-* To work in IE, is necessary to load a Symbol polyfill
+* Require polyfills / transpilation to work with IE
 
 Todo
 * Expose Woff2Font to allow register it
 * Implement a way to register a Shaper on demand
-* Replace remaining for-of loops (once is done Symbol support will no more be required for IE)
 
 Fontkit is an advanced font engine for Node and the browser, used by [PDFKit](https://github.com/devongovett/pdfkit). It supports many font formats, advanced glyph substitution and layout features, glyph path extraction, color emoji glyphs, font subsetting, and more.
 
