@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 // font header
 export default new r.Struct({

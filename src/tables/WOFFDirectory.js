@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 import tables from './';
 
 let WOFFDirectoryEntry = new r.Struct({

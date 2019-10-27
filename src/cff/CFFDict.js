@@ -1,7 +1,7 @@
 import isEqual from 'deep-equal';
-import r from 'restructure';
+import r from 'restructure-next';
 import CFFOperand from './CFFOperand';
-import { PropertyDescriptor } from 'restructure/src/utils';
+import { PropertyDescriptor } from 'restructure-next/src/utils';
 
 export default class CFFDict {
   constructor(ops = []) {

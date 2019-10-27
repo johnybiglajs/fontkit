@@ -1,8 +1,8 @@
-import r from 'restructure';
-import {resolveLength} from 'restructure/src/utils';
+import r from 'restructure-next';
+import {resolveLength} from 'restructure-next/src/utils';
 import {ItemVariationStore} from './variations';
 
-// TODO: add this to restructure
+// TODO: add this to restructure-next
 class VariableSizeNumber {
   constructor(size) {
     this._size = size;

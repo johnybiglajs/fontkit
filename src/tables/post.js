@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 // PostScript information
 export default new r.VersionedStruct(r.fixed32, {

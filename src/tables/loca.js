@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 let loca = new r.VersionedStruct('head.indexToLocFormat', {
   0: {

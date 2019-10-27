@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 // Linear Threshold table
 // Records the ppem for each glyph at which the scaling becomes linear again,

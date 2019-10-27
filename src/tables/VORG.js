@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 let VerticalOrigin = new r.Struct({
   glyphIndex:   r.uint16,

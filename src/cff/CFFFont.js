@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 import CFFIndex from './CFFIndex';
 import CFFTop from './CFFTop';
 import CFFPrivateDict from './CFFPrivateDict';
