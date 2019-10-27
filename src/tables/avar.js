@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 let shortFrac = new r.Fixed(16, 'BE', 14);
 

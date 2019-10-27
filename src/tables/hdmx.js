@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 let DeviceRecord = new r.Struct({
   pixelSize:      r.uint8,

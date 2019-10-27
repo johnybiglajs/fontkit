@@ -45,7 +45,7 @@ function createConfig(filename, browserlist, suffix = '') {
       interop: !!suffix
     },
     external: [
-      'restructure',
+      'restructure-next',
       'tiny-inflate',
       'brotli/decompress',
       'unicode-properties',
@@ -53,7 +53,7 @@ function createConfig(filename, browserlist, suffix = '') {
       'deep-equal',
       'unicode-trie',
       'dfa',
-      'restructure/src/utils'
+      'restructure-next/src/utils'
     ],
     plugins: [
       localResolve(),

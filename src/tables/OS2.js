@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 
 var OS2 = new r.VersionedStruct(r.uint16, {
   header: {

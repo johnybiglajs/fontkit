@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 import Tables from './';
 
 let TableEntry = new r.Struct({

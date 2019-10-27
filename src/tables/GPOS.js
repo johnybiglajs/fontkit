@@ -1,4 +1,4 @@
-import r from 'restructure';
+import r from 'restructure-next';
 import {ScriptList, FeatureList, LookupList, Coverage, ClassDef, Device, Context, ChainingContext} from './opentype';
 import {FeatureVariations} from './variations';
 
@@ -9,15 +9,17 @@ let ValueFormat = new r.Bitfield(r.uint16, [
   'xAdvDevice', 'yAdvDevice'
 ]);
 
+const toRel = ctx => ctx.rel;
+
 let types = {
   xPlacement: r.int16,
   yPlacement: r.int16,
   xAdvance:   r.int16,
   yAdvance:   r.int16,
-  xPlaDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: 'rel' }),
-  yPlaDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: 'rel' }),
-  xAdvDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: 'rel' }),
-  yAdvDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: 'rel' })
+  xPlaDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: toRel }),
+  yPlaDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: toRel }),
+  xAdvDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: toRel }),
+  yAdvDevice: new r.Pointer(r.uint16, Device, { type: 'global', relativeTo: toRel })
 };
 
 class ValueRecord {
