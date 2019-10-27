@@ -35,6 +35,8 @@
     "base.es5.js.map",
     "index.es5.js",
     "index.es5.js.map",
+    "index.browser.js",
+    "index.browser.js.map",
     "data.trie",
     "use.trie",
     "indic.trie"
