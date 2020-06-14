@@ -1,6 +1,6 @@
 {
   "name": "fontkit-next",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "An advanced font engine for Node and the browser",
   "keywords": [
     "opentype",
