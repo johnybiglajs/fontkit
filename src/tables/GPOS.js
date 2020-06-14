@@ -111,7 +111,7 @@ let ComponentRecord = new r.Array(new r.Pointer(r.uint16, Anchor), t => t.parent
 let LigatureAttach  = new r.Array(ComponentRecord, r.uint16);
 let LigatureArray   = new r.Array(new r.Pointer(r.uint16, LigatureAttach), r.uint16);
 
-let GPOSLookup = new r.VersionedStruct('lookupType', {
+var GPOSLookup = new r.VersionedStruct('lookupType', {
   1: new r.VersionedStruct(r.uint16, { // Single Adjustment
     1: { // Single positioning value
       coverage:       new r.Pointer(r.uint16, Coverage),

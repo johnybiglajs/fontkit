@@ -13,7 +13,7 @@ let Ligature = new r.Struct({
 
 let LigatureSet = new r.Array(new r.Pointer(r.uint16, Ligature), r.uint16);
 
-let GSUBLookup = new r.VersionedStruct('lookupType', {
+var GSUBLookup = new r.VersionedStruct('lookupType', {
   1: new r.VersionedStruct(r.uint16, {// Single Substitution
     1: {
       coverage:       new r.Pointer(r.uint16, Coverage),
